@@ -42,6 +42,42 @@ body {
   transform: scale(1.3);
 }
 
-
 // Navbar End
 
+
+
+//Button Styling Begin
+
+.btn-lg, .btn-group-lg > .btn {
+    padding: 10px 16px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+}
+
+// Button Styling End
+
+
+
+
+
+
+// Article Styling Begin
+
+
+.article-title {
+  font-weight: bold;
+  font-size: 2em;
+  margin-bottom: 0.8em;
+  padding-left: 0.7em;
+}
+
+.article-body {
+  font-size: 1.5em;
+  padding-left: 1.2em;
+  color: #64103F;
+
+}
+
+// Article Styling End
