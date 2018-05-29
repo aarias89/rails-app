@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
   def create
     #create using strong params, this is a private method in order to whitelist info that it gets from the web.
     @article = Article.new(article_params)
+    @article.user = current_user
      if @article.save #If successful save
       flash[:success] = "Article has been created"
       redirect_to articles_path
