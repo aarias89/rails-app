@@ -15,8 +15,8 @@ RSpec.feature "Users signin" do
 
     expect(page).to have_content("Signed in successfully.")
     expect(page).to have_content("Signed in as #{@mike.email}")
-    expect(page).not_to_have_link("Sign in")
-    expect(page).not_to_have_link("Sign up")
+    expect(page).not_to have_link("Sign in")
+    expect(page).not_to have_link("Sign up")
 
   end
 
