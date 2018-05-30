@@ -8,6 +8,10 @@ RSpec.describe "Articles", type: :request do
     @article =  Article.create!(title: "Title of Article", body: "Body of Article", user: @Bilbo)
   end
 
+
+
+# Edit/Update --------------
+
   describe 'GET/articles/:id' do
     context 'with non-signed in user' do
       before { get "/articles/#{@article.id}/edit" }
@@ -41,10 +45,11 @@ RSpec.describe "Articles", type: :request do
       it "succesfully edits article" do
         expect(response.status).to eq 200
       end
-
     end
 
   end
+
+# Retreive -------------------------
 
   describe 'GET/articles/:id' do
     context 'with existing article' do
@@ -66,4 +71,5 @@ RSpec.describe "Articles", type: :request do
       end
     end
   end
+
 end
