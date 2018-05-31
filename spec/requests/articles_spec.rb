@@ -8,7 +8,45 @@ RSpec.describe "Articles", type: :request do
     @article =  Article.create!(title: "Title of Article", body: "Body of Article", user: @Bilbo)
   end
 
+  #Delete------------------
 
+  describe 'DELETE/articles/:id' do
+
+    context 'with non-signed in user' do
+      before { delete "/articles/#{@article.id}" }
+
+      it "redirects to signin page" do
+        expect(response.status).to eq 302
+        flash_message = "You need to sign in or sign up before continuing."
+        expect(flash[:alert]).to eq flash_message
+      end
+    end
+
+    context 'with signed in user who is non-owner' do
+      before do
+        login_as(@Gandalf)
+        delete "/articles/#{@article.id}"
+      end
+
+      it "redirects to home page" do
+        expect(response.status).to eq 302
+        flash_message = "You can only delete your own article"
+        expect(flash[:alert]).to eq flash_message
+      end
+    end
+
+    context 'with signed in user who is owner successful delete' do
+      before do
+        login_as @Bilbo
+        delete "/articles/#{@article.id}"
+      end
+
+      it "succesfully deletes article" do
+        expect(response.status).to eq 302
+      end
+    end
+
+  end
 
 # Edit/Update --------------
 
