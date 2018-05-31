@@ -31,7 +31,7 @@ RSpec.describe "Articles", type: :request do
       it "redirects to home page" do
         expect(response.status).to eq 302
         flash_message = "You can only delete your own article"
-        expect(flash[:alert]).to eq flash_message
+        expect(flash[:danger]).to eq flash_message
       end
     end
 
