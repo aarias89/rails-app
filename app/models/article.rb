@@ -5,5 +5,7 @@ class Article < ApplicationRecord
   default_scope { order(created_at: :desc)}
 
   belongs_to :user
+  # will destroy user dependent comments
+  has_many :comments, dependent: :destroy
 end
 

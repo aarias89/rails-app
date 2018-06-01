@@ -12,7 +12,7 @@ RSpec.feature "Adding reviews to articles" do
 
     visit "/"
     click_link @article.title
-    fill_in "New comment", with: "An amazing Article"
+    fill_in "New Comment", with: "An amazing Article"
     click_button "Add Comment"
 
     expect(page).to have_content("Comment has been created")
