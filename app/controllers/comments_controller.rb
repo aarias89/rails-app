@@ -9,7 +9,10 @@ class CommentsController < ApplicationController
       # use strong params (comment_params)
       @comment =  @article.comments.build(comment_params)
       @comment.user = current_user
+      # this is where the comments interact with our DB, this is where we setup ActionCable
         if @comment.save
+          ActionCable.server.broadcast "comments",
+            render(partial: 'comments/comment', object: @comment )
           flash[:notice] = "Comment has been created"
         else
           flash.now[:alert] = "Failed to create commment"
