@@ -4,7 +4,16 @@ development:
 test:
   adapter: async
 
-production:
-  adapter: redis
-  url: redis://localhost:6379/1
-  channel_prefix: first-rails-app_production
+# production:
+#   adapter: redis
+#   url: redis://localhost:6379/1
+#   channel_prefix: first-rails-app_production
+
+production: &production
+  :url:     redis://h:p1a78db7fd3b25413876a34257205a3e79282be4c72da8a736f79bdb8aaf62639@ec2-52-23-66-23.compute-1.amazonaws.com:21199
+  :host: ec2-52-23-66-23.compute-1.amazonaws.com
+  :port: 21199
+  :password: p1a78db7fd3b25413876a34257205a3e79282be4c72da8a736f79bdb8aaf62639
+  :inline: true
+  :timeout: 1
+
