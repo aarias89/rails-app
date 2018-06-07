@@ -9,5 +9,8 @@ App.comments = App.cable.subscriptions.create("CommentsChannel", {
 
   received: function(data) {
     // Called when there's incoming data on the websocket for this channel
+    $messages = $("#messages")
+    $messages.append(data)
+
   }
 });

@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
         else
           flash.now[:alert] = "Failed to create commment"
         end
-        redirect_to article_path(@article)
+        # redirect_to article_path(@article)
       end
   end
 
