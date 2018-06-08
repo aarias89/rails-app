@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
+  url:  redis://redistogo:59712832184aed6704342001511b1a95@barb.redistogo.com:9266/
   channel_prefix: first-rails-app_production
