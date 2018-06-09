@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails blog application using ActionCable for realtime chat/response.
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+```bash
+git clone https://github.com/aarias89/rails-app.git
+```
 
-* System dependencies
+## Run Locally
 
-* Configuration
+```bash
+bundle install
+```
 
-* Database creation
+```
+rails db:create
+```
 
-* Database initialization
+```
+rails db:migrate
+```
 
-* How to run the test suite
+```
+rails s -p 3001
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Heroku
+Deployed  [RailsBlogApp](https://rails-chatapp.herokuapp.com/).
